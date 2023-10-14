@@ -31,7 +31,9 @@ public class LogicTest {
         logic.add(new PawnWhite(Cell.E3));
         logic.add(new BishopBlack(Cell.C1));
         OccupiedCellException exception = assertThrows(OccupiedCellException.class,
-                () -> {logic.move(Cell.C1, Cell.G5);});
+                () -> {
+                    logic.move(Cell.C1, Cell.G5);
+                });
         assertThat(exception.getMessage()).isEqualTo("Figure Occupied Cell");
     }
 

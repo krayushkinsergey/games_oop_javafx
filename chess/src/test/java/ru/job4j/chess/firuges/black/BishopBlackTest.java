@@ -10,8 +10,8 @@ class BishopBlackTest {
     void position() {
         Cell cell = Cell.A1;
         BishopBlack figure = new BishopBlack(cell);
-        Cell cellFigure =figure.position();
-        assertEquals(cell,cellFigure);
+        Cell cellFigure = figure.position();
+        assertEquals(cell, cellFigure);
     }
 
     @Test
@@ -19,9 +19,9 @@ class BishopBlackTest {
         Cell cell = Cell.A1;
         BishopBlack figure = new BishopBlack(cell);
         Cell cellNew = Cell.B5;
-        figure = (BishopBlack)figure.copy(cellNew);
-        Cell cellFigure =figure.position();
-        assertEquals(cellNew,cellFigure);
+        figure = (BishopBlack) figure.copy(cellNew);
+        Cell cellFigure = figure.position();
+        assertEquals(cellNew, cellFigure);
     }
 
     @Test
@@ -29,13 +29,13 @@ class BishopBlackTest {
         BishopBlack figure = new BishopBlack(Cell.C1);
         Cell[] way = figure.way(Cell.G5);
         Cell[] exp = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
-        assertArrayEquals(exp,way);
+        assertArrayEquals(exp, way);
     }
 
     @Test
     void isDiagonal() {
         BishopBlack figure = new BishopBlack(Cell.C1);
-        assertEquals(true, figure.isDiagonal(figure.position(),Cell.G5));
-        assertEquals(false, figure.isDiagonal(figure.position(),Cell.G6));
+        assertEquals(true, figure.isDiagonal(figure.position(), Cell.G5));
+        assertEquals(false, figure.isDiagonal(figure.position(), Cell.G6));
     }
 }
